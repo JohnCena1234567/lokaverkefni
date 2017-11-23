@@ -7,3 +7,32 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+a:link {
+	text-decoration: none;
+}
+
+.like {
+	color: black;
+}
+
+.like:hover {
+	color: red;
+}
+
+.unlike {
+	color: red;
+}
+
+.unlike:hover {
+	color: black;
+}
+
+#flash-message {
+    animation: flash-message 20s forwards;
+}
+
+@keyframes flash-message {
+    0%   {opacity: 1;}
+    100% {opacity: 0; display:none;}
+}

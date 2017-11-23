@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function threads() {
+        return $this->hasMany('App\Thread');
+    }
+
+    public function likes() {
+        return $this->belongsToMany('App\Thread', 'likes', 'user_id', 'post_id');
+    }
 }

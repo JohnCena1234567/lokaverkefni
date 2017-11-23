@@ -7,16 +7,28 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+$(document).ready(function(){
+    $('.show_comments').click(function(e) { 	
+        e.preventDefault();
+    	var id = '#replycomment-' + $(this).data('id');
+    	$(id).slideToggle();
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+    	$(this).hide();
+    	$(this).next().show();
+    });
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+    $('.hide_comments').click(function(e) {
+        e.preventDefault();
+    	var id = '#replycomment-' + $(this).data('id');
+    	$(id).slideToggle();
 
-const app = new Vue({
-    el: '#app'
+    	$(this).hide();
+    	$(this).prev().show();
+    });
+
+    $('.show_input').click(function(e) {
+        e.preventDefault();
+        var id = '#replyinput-' + $(this).data('id');
+        $(id).show();        
+    });
 });
